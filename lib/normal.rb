@@ -1,12 +1,9 @@
-require_relative 'item'
-
 class Normal
-  attr_reader :name, :days_remaining, :quality
+  attr_reader :days_remaining, :quality
 
-  def initialize(name:, days_remaining:, quality:)
-    @name = name
-    @days_remaining = days_remaining
-    @quality = quality
+  def initialize(opts)
+    @days_remaining = opts[:days_remaining]
+    @quality = opts[:quality]
   end
 
   def tick

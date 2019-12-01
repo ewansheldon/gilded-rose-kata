@@ -4,13 +4,11 @@ require_relative 'sulfuras'
 require_relative 'backstage_passes'
 
 class GildedRose
-  attr_reader :name, :days_remaining, :quality, :klass
+  attr_reader :item
 
   def initialize(name:, days_remaining:, quality:)
-    @name = name
-    @days_remaining = days_remaining
-    @quality = quality
-    @klass = klass_for(name)
+    opts = {days_remaining: days_remaining, quality: quality}
+    @item = klass_for(name).new(opts)
   end
 
   def klass_for(name)
@@ -45,6 +43,14 @@ class GildedRose
   end
 
   def tick
-    klass.new(days_remaining, quality).tick
+    item.tick
+  end
+
+  def days_remaining
+    item.days_remaining
+  end
+
+  def quality
+    item.quality
   end
 end
