@@ -4,7 +4,7 @@ require_relative 'sulfuras'
 require_relative 'backstage_passes'
 
 class GildedRose
-  attr_reader :name, :days_remaining, :quality
+  attr_reader :name, :days_remaining, :quality, :klass
 
   def initialize(name:, days_remaining:, quality:)
     @name = name
@@ -22,13 +22,6 @@ class GildedRose
     }
 
     return klasses[name]
-  end
-
-  def normal_tick
-    @days_remaining -= 1
-    return if @quality <= 0
-    @quality -= 1
-    @quality -= 1 if @days_remaining <= 0
   end
 
   def aged_brie_tick
@@ -52,6 +45,6 @@ class GildedRose
   end
 
   def tick
-    klass.tick
+    klass.new(days_remaining, quality).tick
   end
 end
