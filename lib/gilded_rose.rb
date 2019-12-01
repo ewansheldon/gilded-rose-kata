@@ -22,7 +22,6 @@ class GildedRose
   end
 
   def sulfuras_tick
-
   end
 
   def tick
