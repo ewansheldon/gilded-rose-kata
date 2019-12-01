@@ -6,18 +6,20 @@ require_relative 'backstage_passes'
 class GildedRose
   attr_reader :name, :days_remaining, :quality
 
-  klass_for = {
-   "Normal Item" => Normal,
-   "Aged Brie" => AgedBrie,
-   "Sulfuras, Hand of Ragnaros" => Sulfuras,
-   "Backstage passes to a TAFKAL80ETC concert" => BackstagePasses,
-  }
+  def klass_for(name)
+    {
+      "Normal Item" => Normal,
+      "Aged Brie" => AgedBrie,
+      "Sulfuras, Hand of Ragnaros" => Sulfuras,
+      "Backstage passes to a TAFKAL80ETC concert" => BackstagePasses,
+    }
+  end
 
   def initialize(name:, days_remaining:, quality:)
     @name = name
     @days_remaining = days_remaining
     @quality = quality
-    @klass = klass_for[:name]
+    @klass = klass_for[name]
   end
 
   def normal_tick
