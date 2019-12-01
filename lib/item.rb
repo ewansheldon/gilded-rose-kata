@@ -1,8 +1,8 @@
 module Item
-  def initialize(name:, days_remaining:, quality:)
-    @name = name
+  attr_reader :days_remaining, :quality
+
+  def initialize(days_remaining:, quality:)
     @days_remaining = days_remaining
     @quality = quality
-    @klass = klass_for(name)
   end
 end
