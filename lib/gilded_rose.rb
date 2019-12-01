@@ -2,6 +2,7 @@ class GildedRose
   attr_reader :name, :days_remaining, :quality
 
   def initialize(name:, days_remaining:, quality:)
+    @klass =
     @name = name
     @days_remaining = days_remaining
     @quality = quality
