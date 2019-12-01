@@ -13,13 +13,12 @@ class GildedRose
 
   def klass_for(name)
     klasses = {
-      "Normal Item" => Normal,
       "Aged Brie" => AgedBrie,
       "Sulfuras, Hand of Ragnaros" => Sulfuras,
       "Backstage passes to a TAFKAL80ETC concert" => BackstagePasses,
     }
 
-    return klasses[name]
+    return klasses[name] || Normal
   end
 
   def aged_brie_tick
