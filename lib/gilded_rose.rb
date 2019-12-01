@@ -2,6 +2,7 @@ require_relative 'normal'
 require_relative 'aged_brie'
 require_relative 'sulfuras'
 require_relative 'backstage_passes'
+require_relative 'conjured_mana'
 
 class GildedRose
   attr_reader :item
