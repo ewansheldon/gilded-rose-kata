@@ -13,13 +13,15 @@ class GildedRose
       "Sulfuras, Hand of Ragnaros" => Sulfuras,
       "Backstage passes to a TAFKAL80ETC concert" => BackstagePasses,
     }
+
+    return klasses[name]
   end
 
   def initialize(name:, days_remaining:, quality:)
     @name = name
     @days_remaining = days_remaining
     @quality = quality
-    @klass = klass_for[name]
+    @klass = klass_for(name)
   end
 
   def normal_tick
