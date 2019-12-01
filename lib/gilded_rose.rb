@@ -25,6 +25,8 @@ class GildedRose
   end
 
   def backstage_tick
+    @days_remaining -= 1
+    @quality += 1
   end
 
   def tick
