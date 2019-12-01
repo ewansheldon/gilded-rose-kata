@@ -35,16 +35,14 @@ class GildedRose
   end
 
   def tick
-    if @name == "Normal Item"
+    case name
+    when "Normal Item"
       return normal_tick
-    end
-    if @name == "Aged Brie"
+    when "Aged Brie"
       return aged_brie_tick
-    end
-    if @name == "Sulfuras, Hand of Ragnaros"
+    when "Sulfuras, Hand of Ragnaros"
       return sulfuras_tick
-    end
-    if @name == "Backstage passes to a TAFKAL80ETC concert"
+    when "Backstage passes to a TAFKAL80ETC concert"
       return backstage_tick
     end
   end
