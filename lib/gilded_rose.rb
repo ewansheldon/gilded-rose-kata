@@ -24,6 +24,9 @@ class GildedRose
   def sulfuras_tick
   end
 
+  def backstage_tick
+  end
+
   def tick
     if @name == "Normal Item"
       return normal_tick
@@ -33,6 +36,9 @@ class GildedRose
     end
     if @name == "Sulfuras, Hand of Ragnaros"
       return sulfuras_tick
+    end
+    if @name == "Backstage passes to a TAFKAL80ETC concert"
+      return backstage_tick
     end
     if @name != "Aged Brie" and @name != "Backstage passes to a TAFKAL80ETC concert"
       if @quality > 0
