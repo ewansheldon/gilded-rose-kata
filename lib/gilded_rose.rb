@@ -7,7 +7,7 @@ class GildedRose
   attr_reader :name, :days_remaining, :quality
 
   def klass_for(name)
-    {
+    klasses = {
       "Normal Item" => Normal,
       "Aged Brie" => AgedBrie,
       "Sulfuras, Hand of Ragnaros" => Sulfuras,
