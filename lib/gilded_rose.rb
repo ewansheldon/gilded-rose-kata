@@ -1,11 +1,18 @@
 class GildedRose
   attr_reader :name, :days_remaining, :quality
 
+  klass_for = {
+   "Normal Item" => Normal,
+   "Aged Brie" => AgedBrie,
+   "Sulfuras, Hand of Ragnaros" => Sulfuras,
+   "Backstage passes to a TAFKAL80ETC concert" => BackstagePasses,
+  }
+
   def initialize(name:, days_remaining:, quality:)
-    @klass =
     @name = name
     @days_remaining = days_remaining
     @quality = quality
+    @klass = klass_for[:name]
   end
 
   def normal_tick
