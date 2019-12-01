@@ -52,15 +52,6 @@ class GildedRose
   end
 
   def tick
-    case name
-    when "Normal Item"
-      return normal_tick
-    when "Aged Brie"
-      return aged_brie_tick
-    when "Sulfuras, Hand of Ragnaros"
-      return sulfuras_tick
-    when "Backstage passes to a TAFKAL80ETC concert"
-      return backstage_tick
-    end
+    klass.tick
   end
 end
