@@ -17,6 +17,7 @@ class GildedRose
       "Aged Brie" => AgedBrie,
       "Sulfuras, Hand of Ragnaros" => Sulfuras,
       "Backstage passes to a TAFKAL80ETC concert" => BackstagePasses,
+      "Conjured Mana Cake" => ConjuredMana
     }
 
     return klasses[name] || Normal
