@@ -1,3 +1,4 @@
+require_relative 'factory'
 require_relative 'normal'
 require_relative 'aged_brie'
 require_relative 'sulfuras'
@@ -9,18 +10,7 @@ class GildedRose
 
   def initialize(name:, days_remaining:, quality:)
     opts = {days_remaining: days_remaining, quality: quality}
-    @item = klass_for(name).new(opts)
-  end
-
-  def klass_for(name)
-    klasses = {
-      "Aged Brie" => AgedBrie,
-      "Sulfuras, Hand of Ragnaros" => Sulfuras,
-      "Backstage passes to a TAFKAL80ETC concert" => BackstagePasses,
-      "Conjured Mana Cake" => ConjuredMana
-    }
-
-    return klasses[name] || Normal
+    @item = Factory.klass_for(name).new(opts)
   end
 
   def tick
