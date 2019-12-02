@@ -1,11 +1,6 @@
-class ConjuredMana
-  attr_reader :days_remaining, :quality
+require_relative 'item'
 
-  def initialize(days_remaining:, quality:)
-    @days_remaining = days_remaining
-    @quality = quality
-  end
-
+class ConjuredMana < Item
   def tick
     @days_remaining -= 1
     return if @quality <= 0
